@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockroach Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cockroach Facts</h1>
+        <button id="factButton">Show a Fact</button>
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        const cockroachFacts = [
+            "Cockroaches can live for several weeks without their heads.",
+            "There are over 4,500 species of cockroaches worldwide.",
+            "Cockroaches can run up to 3 miles per hour.",
+            "They can survive in extreme conditions, including radiation levels that would be lethal to humans.",
+            "Cockroaches have been around for over 300 million years.",
+            "They can reproduce quickly; a single female can produce up to 400 offspring in her lifetime.",
+            "Cockroaches can live without food for up to a month.",
+            "They have a unique ability to sense danger through their antennae.",
+            "Cockroaches can hold their breath for up to 40 minutes.",
+            "Some species of cockroaches can glide short distances."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * cockroachFacts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.innerText = cockroachFacts[randomIndex];
+            factDisplay.style.opacity = 0; // Reset opacity for fade-in effect
+            setTimeout(() => {
+                factDisplay.style.opacity = 1; // Fade-in effect
+            }, 50);
+        });
+    </script>
+</body>
+</html>
